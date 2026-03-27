@@ -1,21 +1,22 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class TrainConsistManagementApp {
     public static void main(String[] args){
         System.out.println("=====================================");
-        System.out.println("   UC2-Add Passenger Bogies to train ");
+        System.out.println("     UC3 - Track unique Bogie IDs    ");
         System.out.println("=====================================");
-        List<String> passengerBogies=new ArrayList<>();
-        passengerBogies.add("sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("FirstClass");
-        System.out.println("After adding boggies:\nPassenger Boggies:"+passengerBogies+"\n");
-        passengerBogies.remove("AC Chair");
-        System.out.println("After removing AC Chair:\nPassenger Boggies:"+passengerBogies+"\n");
-        System.out.println("Checking if Sleeper exists:\nContains Sleeper? :"+passengerBogies.contains("sleeper")+"\n");
-        System.out.println("Final Passenger Consist:\n"+passengerBogies+"\n");
-        System.out.println("UC2 operations completed succesfully");
+        Set<String> bogies=new HashSet<>();
+        bogies.add("BG101");
+        bogies.add("BG102");
+        bogies.add("BG103");
+        bogies.add("BG104");
+        bogies.add("BG101");
+        bogies.add("BG102");
+        System.out.println("Bogie IDs after insertion:\n"+bogies);
+        System.out.println("Note:\nDuplicates are automatically ignored by Hashset");
+        System.out.println("UC3 uniqueness validation is completed...");
+
 
     }
 
