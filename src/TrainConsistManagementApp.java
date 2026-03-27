@@ -10,11 +10,11 @@ public class TrainConsistManagementApp {
         passengerBogies.add("sleeper");
         passengerBogies.add("AC Chair");
         passengerBogies.add("FirstClass");
-        System.out.println("After adding boggies:\nPassenger Boggies:"+passengerBogies);
+        System.out.println("After adding boggies:\nPassenger Boggies:"+passengerBogies+"\n");
         passengerBogies.remove("AC Chair");
-        System.out.println("After removing AC Chair:\nPassenger Boggies:"+passengerBogies);
-        System.out.println("Checking if Sleeper exists:\nContains Sleeper? :"+passengerBogies.contains("sleeper"));
-        System.out.println("Final Passenger Consist:\n"+passengerBogies);
+        System.out.println("After removing AC Chair:\nPassenger Boggies:"+passengerBogies+"\n");
+        System.out.println("Checking if Sleeper exists:\nContains Sleeper? :"+passengerBogies.contains("sleeper")+"\n");
+        System.out.println("Final Passenger Consist:\n"+passengerBogies+"\n");
         System.out.println("UC2 operations completed succesfully");
 
     }
