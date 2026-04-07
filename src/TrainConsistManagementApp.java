@@ -1,20 +1,34 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TrainConsistManagementApp {
-    public static void main(String[] args){
-        System.out.println("=====================================");
-        System.out.println(" UC6-Map Bogie to Capacity (HashMap) ");
-        System.out.println("=====================================");
-        Map<String,Integer> capacityMap=new HashMap<>();
-        capacityMap.put("First Class",24);
-        capacityMap.put("Cargo",120);
-        capacityMap.put("sleeper",72);
-        capacityMap.put("AC chair",56);
-        for (Map.Entry<String,Integer> map:capacityMap.entrySet()){
-            System.out.println(map.getKey()+"->"+map.getValue());
+    static class Bogie{
+        String name;
+        int capacity;
+        Bogie(String name,int capacity){
+            this.name=name;
+            this.capacity=capacity;
         }
-        System.out.println("UC6 Boogie-Capacity mapping completed...");
+    }
+    public static void main(String[] args){
+        System.out.println("=======================================");
+        System.out.println("UC7-Sort Bogies by Capacity(Comparator)");
+        System.out.println("=======================================");
+        List<Bogie> bogieList=new ArrayList<>();
+        bogieList.add(new Bogie("Sleeper",72));
+        bogieList.add(new Bogie("AC Chair",56));
+        bogieList.add(new Bogie("First Class",24));
+        bogieList.add(new Bogie("General",90));
+        System.out.println("Before Sorting:");
+        for (int i=0;i<bogieList.size();i++){
+            System.out.println(bogieList.get(i).name+"->"+bogieList.get(i).capacity);
+        }
+        System.out.println("\nAfter Sorting:");
+        bogieList.sort((b1,b2)->b1.capacity-b2.capacity);
+        for (int i=0;i<bogieList.size();i++){
+            System.out.println(bogieList.get(i).name+"->"+bogieList.get(i).capacity);
+        }
+        System.out.println("UC7 Sorting completed...");
 
 
 
