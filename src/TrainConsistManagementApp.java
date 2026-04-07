@@ -1,7 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.*;
 
 public class TrainConsistManagementApp {
+
+    static List<Bogie> bogieList;
     static class Bogie{
         String name;
         int capacity;
@@ -10,28 +12,35 @@ public class TrainConsistManagementApp {
             this.capacity=capacity;
         }
     }
-    public static void main(String[] args){
-        System.out.println("=======================================");
-        System.out.println("UC7-Sort Bogies by Capacity(Comparator)");
-        System.out.println("=======================================");
-        List<Bogie> bogieList=new ArrayList<>();
+
+    public static List<Bogie> addlistofbogies(){
+        bogieList=new ArrayList<>();
         bogieList.add(new Bogie("Sleeper",72));
         bogieList.add(new Bogie("AC Chair",56));
         bogieList.add(new Bogie("First Class",24));
         bogieList.add(new Bogie("General",90));
-        System.out.println("Before Sorting:");
-        for (int i=0;i<bogieList.size();i++){
-            System.out.println(bogieList.get(i).name+"->"+bogieList.get(i).capacity);
+        return bogieList;
+    }
+    public static void main(String[] args){
+        System.out.println("=======================================");
+        System.out.println("UC8-Filter Passenger Bogies Using Streams");
+        System.out.println("=======================================");
+        addlistofbogies();
+        System.out.println("All Bogies");
+        for (Bogie b:bogieList){
+            System.out.println(b.name+"->"+b.capacity);
         }
-        System.out.println("\nAfter Sorting:");
-        bogieList.sort((b1,b2)->b1.capacity-b2.capacity);
-        for (int i=0;i<bogieList.size();i++){
-            System.out.println(bogieList.get(i).name+"->"+bogieList.get(i).capacity);
+        System.out.println("\nAfter filtering");
+        List<Bogie> result=bogieList.stream().filter(bogie -> bogie.capacity>60).collect(Collectors.toList());
+        for (Bogie b:result){
+            System.out.println(b.name+"->"+b.capacity);
         }
-        System.out.println("UC7 Sorting completed...");
+
+        System.out.println("UC8 filtering completed...");
 
 
 
     }
+
 
 }
