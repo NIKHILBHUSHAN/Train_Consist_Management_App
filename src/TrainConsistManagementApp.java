@@ -20,8 +20,6 @@ public class TrainConsistManagementApp {
         System.out.println("after removing last and first bogie:\n"+trainConsist+"\n");
         System.out.println("UC4 ordered consist operations completed...");
 
-
-
     }
 
 }
